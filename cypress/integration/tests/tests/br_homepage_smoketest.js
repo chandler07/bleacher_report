@@ -42,7 +42,7 @@ describe('Launch Bleacher report hompage', () => {
 })
 
 describe('Check existence of league links buttons on the header and visit link', () => {
-    it.only('should make sure visible header buttons exist and links be visited', () => {
+    it('should make sure visible header buttons exist and links be visited', () => {
       for (var key in leagueLinksDict) {
         cy.get('#' + leagueLinksDict[key]).should('be.visible').click()
         cy.url().should('include', leagueLinksDict[key])
@@ -109,7 +109,7 @@ describe('Mouseover league links to reveal teams', () =>{
    * If I got it working, ideally I would like to ensure the user can hover over the leagues, ensure the
    * dropdown appears, select Home and one team for each league to ensure it goes to the correct page
    */ 
-  it.only('should reveal a new element with all teams in that league', () => {
+  it('should reveal a new element with all teams in that league', () => {
     for (var key in leagueLinksDict){
       var section = " > section"
       cy.get('#' + leagueLinksDict[key]).trigger('mouseover')

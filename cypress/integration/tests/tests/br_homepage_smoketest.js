@@ -29,7 +29,7 @@ describe('Launch Bleacher report hompage', () => {
     cy.get(HEADER_LOGO).should('be.visible')
     cy.get(FOOTER_LOGO).should('be.visible')
     cy.contains('2020 Bleacher Report, Inc.').should('be.visible')
-	  //cy.screenshot() //coould be used for screen comparison if desired
+	  //cy.screenshot() //could be used for screen comparison if desired
   })
 })
 
@@ -41,21 +41,21 @@ describe('Check existence of league links buttons on the header', () => {
         'CFB',
         'World Football',
         'MLB',
-        'NHL',
-        'CBB',
-        'MMA',
-        'WWE',
-        'Golf',
-        'More',
+ //       'NHL',  // not always visible depending on browser window size in cypress
+ //       'CBB',  // not always visible depending on browser window size in cypress
+ //       'MMA',  // not always visible depending on browser window size in cypress
+ //       'WWE',  // not always visible depending on browser window size in cypress
+ //       'Golf', // not always visible depending on browser window size in cypress
+ //       'More', // not always visible depending on browser window size in cypress
         'Sign Up',
         'Login',
         ];
 
-    it.skip('should make sure visible header buttons exist', () => {
+    it('should make sure visible header buttons exist', () => {
     leagueLinks.forEach((btn) => {
         cy.contains(btn).should('be.visible')
     })
-    //cy.screenshot() //coould be used for screen comparison if desired
+    //cy.screenshot() //could be used for screen comparison if desired
    })
 })
 
@@ -64,7 +64,7 @@ describe('Direct new user to sign up', () => {
 
   it('should go to the sign up webpage', () => {
     selectElementAndVisit(SIGN_UP)
-    //cy.screenshot() //coould be used for screen comparison if desired
+    //cy.screenshot() //could be used for screen comparison if desired
   })
 })
 
@@ -73,7 +73,7 @@ describe('Direct existing user to login', () => {
   
   it('should go to the login webpage', () => {
     selectElementAndVisit(LOGIN)
-    //cy.screenshot() //coould be used for screen comparison if desired
+    //cy.screenshot() //could be used for screen comparison if desired
     })
 })
 
@@ -82,7 +82,7 @@ describe('View Main Hero Article', () => {
 
   it('should display the main hero article and be accessible', () => {
     selectElementAndVisit(HERO_THUMBNAIL_PATH)
-     //cy.screenshot() //coould be used for screen comparison if desired
+     //cy.screenshot() //could be used for screen comparison if desired
     })
 })
 
@@ -90,7 +90,7 @@ describe('Scroll to bottom of page', () => {
   it('should allow user to scroll to the bottom of the homepage', () => {
     cy.scrollTo('bottom')
     cy.contains('2020 Bleacher Report, Inc. Turner Broadcasting System, Inc. All Rights Reserved').should('be.visible')
-    //cy.screenshot() //coould be used for screen comparison if desired
+    //cy.screenshot() //could be used for screen comparison if desired
   })
 })
 
@@ -105,6 +105,7 @@ describe('Check for each module on homepage', () => {
   it('should have content module sections', () =>{
     for (var key in homepageModulesDict){
       cy.get(homepageModulesDict[key]).scrollIntoView()
+      //cy.screenshot() //could be used for screen comparison if desired
     }
 
   })
